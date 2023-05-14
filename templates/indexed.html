@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    {% if message %}
+        <div class="alert alert-primary mb-0 text-center" role="alert">
+            Registered!
+        </div>
+    {% endif %}
+    {% if buy %}
+    <div class="alert alert-primary mb-0 text-center" role="alert">
+        Bought!
+    </div>
+    {% endif %}
+    <div class="container py-5 text-center">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th class="text-start">Symbol</th>
+                    <th class="text-start">Name</th>
+                    <th class="text-end">Shares</th>
+                    <th class="text-end">Price</th>
+                    <th class="text-end">TOTAL</th>
+                </tr>
+            </thead>
+        <tbody>
+
+                <tr>
+                    <td class="text-start"></td>
+                    <td class="text-start"></td>
+                    <td class="text-end"></td>
+                    <td class="text-end"></td>
+                    <td class="text-end"></td>
+                </tr>
+
+
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td class="border-0 fw-bold text-end" colspan="4">Cash</td>
+                    <td class="border-0 text-end">$10000,00</td>
+                </tr>
+                <tr>
+                    <td class="border-0 fw-bold text-end" colspan="4">TOTAL</td>
+                    <td class="border-0 w-bold text-end">$10000,00</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <form action="/sell" method="post">
+        <div class="mb-3">
+            <select class="form-select mx-auto w-auto" name="symbol">
+                <option disabled="" selected="">Symbol</option>
+                {% if current %}
+                    {% for symbol in symbols %}
+                        <option name="{{ symbol['symbol'] }}">{{ symbol["symbol"] }}</option>
+                    {% endfor %}
+                {% endif %}
+
+            </select>
+        </div>
+        <div class="mb-3">
+            <input autocomplete="off" class="form-control mx-auto w-auto" name="shares" placeholder="Shares" type="text">
+        </div>
+                {% if disable %}
+                    <button class="btn btn-primary" type="submit">Sell</button>
+                {% else %}
+                    <button class="btn btn-primary" type="submit" disabled>Sell</button>
+                {% endif %}
+    </form>
+{% endblock %}
+
